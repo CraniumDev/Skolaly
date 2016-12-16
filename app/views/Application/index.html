@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Get a Scholarship form the world's biggest scholarship search engine.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Skolaly - Get a Scholarship</title>
+        <!-- Material Design Lite -->
+        <script type="text/javascript" src="@{'/public/javascripts/mdl/material.min.js'}"></script>
+        <link rel="stylesheet" href="@{'/public/javascripts/mdl/material.min.css'}">
+        <!-- Material Design icon font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/main.css'}">
+
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    </head>
+    <body>
+    <!-- Uses a transparent header that draws on top of the layout's background -->
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><code><strong>Skolaly</strong></code></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="@{Application.about()}">About</a>
+                    <a class="mdl-navigation__link" href="@{Application.terms()}">Terms</a>
+                    <a class="mdl-navigation__link" href="@{Application.privacy()}">Privacy and Cookies</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="mdl-layout__content">
+            <div id="page-content" class="mdl-grid">
+                <!-- <div> -->
+                <form action="@{Application.query()}" id="search_form" method="get">
+                    <!-- Textfield with Floating Label -->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--3-col-phone">
+                        <input class="mdl-textfield__input" type="text" id="query" name="keyword">
+                        <label class="mdl-textfield__label" for="query">Search for Scholarships e.g " B.Sc in Computer Science "</label>
+                    </div>
+                    <br />
+
+                    <!-- Colored raised button -->
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                        Search
+                    </button>
+                </form>
+                <!-- </div> -->
+            </div>
+
+        </main>
+    </div>
+    </body>
+</html>

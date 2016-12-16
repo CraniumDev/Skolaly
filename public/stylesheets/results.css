@@ -1,0 +1,34 @@
+.demo-layout-transparent {
+	/*background: url('../assets/homeimage.jpg') center / cover;*/
+}
+
+.demo-layout-transparent .mdl-layout__header .mdl-layout__header-row,
+.demo-layout-transparent .mdl-layout__drawer-button {
+	/* This background is dark, so we set text to white. Use 87% black instead if
+		 your background is light. */
+	color: #2196F3;
+}
+
+
+/*MDL assigns padding-left of ~70px to the header for the drawers hamburger button.
+Since we don't use the hamburger button, left padding is reduced to 16 px*/
+.mdl-layout__header-row {
+	padding-left: 16px;
+	height: 110px;
+}
+
+/*.mdl-textfield__input, .mdl-textfield__label {
+	font-size: 150%;
+	line-height: 50px;
+	text-align: center;
+}*/
+
+.mdl-navigation a.mdl-navigation__link,
+.mdl-textfield label,
+.mdl-textfield input {
+	color: #2196F3;
+}
+
+div.mdl-card {
+	margin-top: 10px;
+}

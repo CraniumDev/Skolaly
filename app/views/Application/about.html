@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Get a Scholarship form the world's biggest scholarship search engine.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Skolaly - Get a Scholarship</title>
+        <!-- Material Design Lite -->
+        <script type="text/javascript" src="@{'/public/javascripts/mdl/material.min.js'}"></script>
+        <link rel="stylesheet" href="@{'/public/javascripts/mdl/material.min.css'}">
+        <!-- Material Design icon font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/main.css'}">
+
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    </head>
+    <body>
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><code><strong>
+                    Skolaly</strong></code></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="@{Application.about()}">About</a>
+                    <a class="mdl-navigation__link" href="@{Application.terms()}">Terms</a>
+                    <a class="mdl-navigation__link" href="@{Application.privacy()}">Privacy and Cookies</a>
+                </nav>
+            </div>
+        </header>
+    </body>
+</html>

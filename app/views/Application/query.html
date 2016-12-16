@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Get a Scholarship form the world's biggest scholarship search engine.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Skolaly - Get a Scholarship</title>
+        <!-- Material Design Lite -->
+        <script type="text/javascript" src="@{'/public/javascripts/mdl/material.min.js'}"></script>
+        <link rel="stylesheet" href="@{'/public/javascripts/mdl/material.min.css'}">
+        <!-- Material Design icon font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/results.css'}">
+        <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/play-pagination.css'}">
+
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    </head>
+    <body>
+        <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header mdl-layout__header--transparent">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title"><code><strong>
+                        Skolaly
+                    </strong></code></span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer">
+                        <!-- Search Form -->
+                        <form action="@{Application.query()}" method="get" id="search_form">
+                            <!-- Textfield with Floating Label -->
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--7-col-desktop mdl-cell--4-col-tablet mdl-cell--3-col-phone">
+                                <input class="mdl-textfield__input" type="text" id="query" name="keyword" value="${flash.keyword}">
+
+                            </div>
+
+                            <!-- Colored raised button -->
+                            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                Search
+                            </button>
+
+                        </form >
+                        <!-- Search Form End -->
+                    </div>
+                    <!-- Navigation -->
+                    <nav class="mdl-navigation">
+                        <a class="mdl-navigation__link" href="@{Application.about()}">About</a>
+                        <a class="mdl-navigation__link" href="@{Application.terms()}">Terms</a>
+                        <a class="mdl-navigation__link" href="@{Application.privacy()}">Privacy and Cookies</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div id="page-content">
+                    <!-- Textfield with Floating Label -->
+                    <div class="mdl-grid">
+                        #{paginate.list items:paginator, as:'result'}
+                        <ul class="mdl-card mdl-shadow--2dp mdl-cell--8-col-desktop">
+                            <a class="mdl-card__title mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                                   href="${result.getUrl()}" target="_blank">${result.getTitle()}</a>
+
+                            <p class="mdl-card__supporting-text">
+                                ${result.getIndexedDate()}<br />
+                                ${result.getDescription().raw()}<br />
+                            </p>
+                        </ul>
+                        #{/paginate.list}
+                        #{else}
+                            <h4>Your search return no results</h4>
+                        #{/else}
+                    </div>
+                    <div class="pagination-container">
+                        #{paginate.controls items:paginator/}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
