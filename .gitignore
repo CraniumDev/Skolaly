@@ -29,6 +29,5 @@ hs_err_pid*
 
 # Created by .ignore support plugin (hsz.mobi)
 app/views/tags/
-precompiled/
 skolaly-seacher.iws
 skolaly-seacher.ipr
