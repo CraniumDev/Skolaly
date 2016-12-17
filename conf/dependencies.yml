@@ -1,5 +1,5 @@
 # Application dependencies
 
 require:
-    - play 1.4.3
+    - play
     - org.apache.solr -> solr-solrj 6.2.1
