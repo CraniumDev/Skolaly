@@ -4,6 +4,7 @@ bin/
 /db
 .eclipse
 /lib/
+/modules/
 /logs/
 /project/project
 /project/target
@@ -31,4 +32,4 @@ hs_err_pid*
 app/views/tags/
 skolaly-seacher.iws
 skolaly-seacher.ipr
-/precompiled
+/precompiled/
