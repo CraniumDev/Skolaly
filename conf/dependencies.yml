@@ -2,5 +2,4 @@
 
 require:
     - play 1.4.3
-    - play -> paginate 0.14
     - org.apache.solr -> solr-solrj 6.2.1
