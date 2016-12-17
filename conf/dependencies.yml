@@ -9,4 +9,5 @@ repositories:
     -paginate:
         type: paginate
         artifact: "https://www.playframework.com/modules/paginate-0.14.zip"
-        
+        contains:
+          - com.playframework.com/modules/paginate-0.14 -> *
