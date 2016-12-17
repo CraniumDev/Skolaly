@@ -31,3 +31,4 @@ hs_err_pid*
 app/views/tags/
 skolaly-seacher.iws
 skolaly-seacher.ipr
+/precompiled
