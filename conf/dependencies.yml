@@ -4,3 +4,9 @@ require:
     - play
     - play -> paginate 0.14
     - org.apache.solr -> solr-solrj 6.2.1
+
+repositories:
+    -paginate:
+        type: paginate
+        artifact: "https://www.playframework.com/modules/paginate-0.14.zip"
+        
