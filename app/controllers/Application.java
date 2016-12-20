@@ -51,7 +51,7 @@ public class Application extends Controller {
         SolrQuery query = new SolrQuery();
         query.setQuery(keyword);
         query.setFields("digest", "id", "content", "title", "url", "tstamp");
-        query.setHighlight(true).setHighlightSnippets(3);
+        query.setHighlight(true).setHighlightSnippets(4);
         query.setParam("hl.tag.pre", "<strong>").setParam("hl.tag.post", "</strong>");
         query.setParam("hl.fl", "content");
         query.setParam("hl.maxAnalyzedChars", "350");
@@ -100,13 +100,17 @@ public class Application extends Controller {
             tmpObj.setIndexedDate(indexed_date);
 
             String id = result.getFieldValue("digest").toString();
-            if (response.getHighlighting().get(id) != null) {
-                List<String> highlightSnippet = response.getHighlighting().get(id).get("content");
-                String snippet = highlightSnippet.get(0);
-                tmpObj.setDescription(snippet);
-            }
+            try {
+                if (response.getHighlighting().get(id) != null) {
+                    List<String> highlightSnippet = response.getHighlighting().get(id).get("content");
+                    String snippet = highlightSnippet.get(0);
+                    tmpObj.setDescription(snippet);
+                }
 
-            myResults.add(tmpObj);
+                myResults.add(tmpObj);
+            } catch (NullPointerException ex) {
+                ex.getCause();
+            }
         }
     }
 }
