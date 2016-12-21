@@ -85,22 +85,22 @@ public class Application extends Controller {
 
     private static void processSearchResults(QueryResponse response) {
         SolrDocumentList results = response.getResults();
+        try {
+            for (SolrDocument result : results) {
 
-        for (SolrDocument result : results) {
+                MyResultObject tmpObj = new MyResultObject();
 
-            MyResultObject tmpObj = new MyResultObject();
+                String title = result.getFieldValue("title").toString();
+                tmpObj.setTitle(title);
 
-            String title = result.getFieldValue("title").toString();
-            tmpObj.setTitle(title);
+                String url = result.getFieldValue("url").toString();
+                tmpObj.setUrl(url);
 
-            String url = result.getFieldValue("url").toString();
-            tmpObj.setUrl(url);
+                String indexed_date = result.getFieldValue("tstamp").toString();
+                tmpObj.setIndexedDate(indexed_date);
 
-            String indexed_date = result.getFieldValue("tstamp").toString();
-            tmpObj.setIndexedDate(indexed_date);
-
-            String id = result.getFieldValue("digest").toString();
-            try {
+                String id = result.getFieldValue("digest").toString();
+                
                 if (response.getHighlighting().get(id) != null) {
                     List<String> highlightSnippet = response.getHighlighting().get(id).get("content");
                     String snippet = highlightSnippet.get(0);
@@ -108,9 +108,9 @@ public class Application extends Controller {
                 }
 
                 myResults.add(tmpObj);
-            } catch (NullPointerException ex) {
-                ex.getCause();
             }
+        } catch (NullPointerException ex) {
+            ex.getMessage();
         }
     }
 }
