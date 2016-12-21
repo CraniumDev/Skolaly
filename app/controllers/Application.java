@@ -100,7 +100,7 @@ public class Application extends Controller {
                 tmpObj.setIndexedDate(indexed_date);
 
                 String id = result.getFieldValue("digest").toString();
-                
+
                 if (response.getHighlighting().get(id) != null) {
                     List<String> highlightSnippet = response.getHighlighting().get(id).get("content");
                     String snippet = highlightSnippet.get(0);
