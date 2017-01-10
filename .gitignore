@@ -33,3 +33,6 @@ app/views/tags/
 skolaly-seacher.iws
 skolaly-seacher.ipr
 /precompiled/
+
+#Ignore text editor temporary files
+*~
