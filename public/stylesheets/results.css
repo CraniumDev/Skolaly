@@ -32,3 +32,8 @@ Since we don't use the hamburger button, left padding is reduced to 16 px*/
 div.mdl-card {
 	margin-top: 10px;
 }
+
+header .mdl-layout-title a {
+	text-decoration: none;
+	color: inherit;
+}

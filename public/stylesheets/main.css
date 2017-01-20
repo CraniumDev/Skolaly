@@ -33,3 +33,8 @@ form#search_form {
 	width: 100%;
 	text-align: center;
 }
+
+header .mdl-layout-title a {
+	text-decoration: none;
+	color: inherit;
+}
