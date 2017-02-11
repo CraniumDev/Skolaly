@@ -38,3 +38,7 @@ header .mdl-layout-title a {
 	text-decoration: none;
 	color: inherit;
 }
+
+.mdl-textfield__input {
+	display: inline;
+}
