@@ -14,14 +14,29 @@
         <link rel="stylesheet" type="text/css" href="@{'/public/stylesheets/main.css'}">
 
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <style>
+            a {
+                color: #2196F3;
+            }
+            #page-content p {
+                font-size: 1.5em;
+                line-height: 2em;
+                max-width: 300px;
+                text-align: center;
+                margin: auto;
+            }
+        </style>
     </head>
     <body>
-        <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header mdl-layout__header--transparent">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
                 <span class="mdl-layout-title"><code><a href="@{Application.index()}"><strong>Skolaly</strong></a></code></span>
                 <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout-spacer">
+
+                </div>
                 <!-- Navigation -->
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="@{Application.about()}">About</a>
@@ -30,5 +45,19 @@
                 </nav>
             </div>
         </header>
+            <main class="mdl-layout__content">
+                <div id="page-content">
+                    <p>
+                        Skolaly is an open source educational opportunities (scholarships, conferences, competitions, etc) search engine built by <a href="https://twitter.com/tahteche">@tahteche</a> and <a href="https://twitter.com/ffringel">@ffringel</a> to help students find scholarship opportunities for free.
+                    </p>
+                    <p>
+                        Contact us on twitter: <a href="https://twitter.com/craniumdev">@craniumdev</a>
+                    </p>
+                    <p>
+                        The project is still in beta so expect many improvements to come soon.
+                    </p>
+                </div>
+            </main>
+        </div>
     </body>
 </html>
