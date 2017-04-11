@@ -42,9 +42,9 @@ public class Application extends Controller {
         String DEFAULT_COLLECTION = System.getenv("DEFAULT_COLLECTION");
         String zkHost1 = System.getenv("zkHostString1");
         String zkHost2 = System.getenv("zkHostString2");
-        String zkHostString = zkHost1 + "," + zkHost2;
+        String zkHost = zkHost1 + "," + zkHost2;
 
-        CloudSolrClient solrClient = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
+        CloudSolrClient solrClient = new CloudSolrClient.Builder().withZkHost(zkHost).build();
         solrClient.setDefaultCollection(DEFAULT_COLLECTION);
 
         params.flash();  // add http parameters to the flash scope and persist search form query data
