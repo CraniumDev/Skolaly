@@ -42,8 +42,7 @@ public class Application extends Controller {
         String DEFAULT_COLLECTION = System.getenv("DEFAULT_COLLECTION");
         String zkHost1 = System.getenv("zkHostString1");
         String zkHost2 = System.getenv("zkHostString2");
-        String zkHostString = "ec2-34-193-230-172.compute-1.amazonaws.com:2181," +
-                "ec2-34-194-75-157.compute-1.amazonaws.com:2181";
+        String zkHostString = zkHost1 + "," + zkHost2;
 
         CloudSolrClient solrClient = new CloudSolrClient.Builder().withZkHost(zkHostString).build();
         solrClient.setDefaultCollection(DEFAULT_COLLECTION);
