@@ -39,6 +39,9 @@ public class Application extends Controller {
     }
 
     public static void query(@Required String keyword) throws SolrServerException, IOException {
+        checkAuthenticity(); // Prevent CSRF attacks
+        params.flash();  // add http parameters to the flash scope and persist search form query data
+
         String DEFAULT_COLLECTION = System.getenv("DEFAULT_COLLECTION");
         String zkHost1 = System.getenv("zkHostString1");
         String zkHost2 = System.getenv("zkHostString2");
@@ -47,7 +50,6 @@ public class Application extends Controller {
         CloudSolrClient solrClient = new CloudSolrClient.Builder().withZkHost(zkHost).build();
         solrClient.setDefaultCollection(DEFAULT_COLLECTION);
 
-        params.flash();  // add http parameters to the flash scope and persist search form query data
 
         SolrQuery query = new SolrQuery();
         query.setQuery(keyword);

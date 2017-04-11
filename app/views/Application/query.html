@@ -35,6 +35,7 @@
                     <div class="mdl-layout-spacer">
                         <!-- Search Form -->
                         <form action="@{Application.query()}" method="get" id="search_form">
+                            #{authenticityToken /}
                             <!-- Textfield with Floating Label -->
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--7-col-desktop mdl-cell--4-col-tablet mdl-cell--3-col-phone">
                                 <input class="mdl-textfield__input" type="text" id="query" name="keyword" value="${flash.keyword}">

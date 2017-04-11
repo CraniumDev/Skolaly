@@ -45,6 +45,7 @@
             <div id="page-content" class="mdl-grid">
                 <!-- <div> -->
                 <form action="@{Application.query()}" id="search_form" method="get">
+                    #{authenticityToken /}
                     <!-- Textfield with Floating Label -->
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--3-col-phone">
                         <input class="mdl-textfield__input" type="text" id="query" name="keyword">
